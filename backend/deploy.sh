@@ -15,7 +15,7 @@ ssh ${SERVER_USER}@${SERVER_IP} "
 
     echo '🔄 Arrêt des conteneurs existants...'
     cd ${SERVER_DIR}
-    docker-compose down || true
+    docker-compose -f docker-compose.prod.yml down || true
 
     echo '🧹 Nettoyage des anciens fichiers...'
     rm -rf ${SERVER_DIR}/*
@@ -29,9 +29,23 @@ scp -r backend/* ${SERVER_USER}@${SERVER_IP}:${SERVER_DIR}/
 echo "🚀 Démarrage des conteneurs..."
 ssh ${SERVER_USER}@${SERVER_IP} "
     cd ${SERVER_DIR}
-    docker-compose up --build -d
+    docker-compose -f docker-compose.prod.yml up --build -d
+"
+
+# Run database migrations
+echo "🔄 Exécution des migrations de la base de données..."
+ssh ${SERVER_USER}@${SERVER_IP} "
+    cd ${SERVER_DIR}
+    docker-compose -f docker-compose.prod.yml exec api npx prisma migrate deploy
+"
+
+# Show logs
+echo "📋 Affichage des logs..."
+ssh ${SERVER_USER}@${SERVER_IP} "
+    cd ${SERVER_DIR}
+    docker-compose -f docker-compose.prod.yml logs -f
 "
 
 echo "✅ Déploiement terminé !
-Pour voir les logs: ssh ${SERVER_USER}@${SERVER_IP} 'cd ${SERVER_DIR} && docker-compose logs'
+Pour voir les logs: ssh ${SERVER_USER}@${SERVER_IP} 'cd ${SERVER_DIR} && docker-compose -f docker-compose.prod.yml logs'
 Pour vérifier les conteneurs: ssh ${SERVER_USER}@${SERVER_IP} 'docker ps'" 
