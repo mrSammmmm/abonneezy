@@ -76,3 +76,13 @@ app.*.map.json
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+# Node.js backend
+backend/node_modules/
+backend/.env
+backend/.env.*
+!backend/.env.example
+backend/dist/
+backend/logs/
+backend/*.log
+backend/coverage/
