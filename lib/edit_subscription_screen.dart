@@ -177,7 +177,8 @@ class _EditSubscriptionScreenState extends State<EditSubscriptionScreen> {
                       labelText: 'Amount',
                       prefixText: '\$ ',
                       border: OutlineInputBorder()),
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  keyboardType:
+                      const TextInputType.numberWithOptions(decimal: true),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter an amount';

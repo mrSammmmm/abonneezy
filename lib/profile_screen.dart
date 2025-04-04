@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:abonneezy/appearance_screen.dart';
 import 'package:abonneezy/currency_screen.dart';
 import 'main.dart';

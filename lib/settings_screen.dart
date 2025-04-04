@@ -103,7 +103,7 @@ class SettingsScreen extends StatelessWidget {
     return Column(
       children: [
         RadioListTile<Currency>(
-          title: Text('Euro (€)'),
+          title: const Text('Euro (€)'),
           subtitle: const Text('Zone Euro'),
           value: Currency.EUR,
           groupValue: currentCurrency,
@@ -112,7 +112,7 @@ class SettingsScreen extends StatelessWidget {
           },
         ),
         RadioListTile<Currency>(
-          title: Text('Dollar US (\$)'),
+          title: const Text('Dollar US (\$)'),
           subtitle: const Text('États-Unis'),
           value: Currency.USD,
           groupValue: currentCurrency,
@@ -121,7 +121,7 @@ class SettingsScreen extends StatelessWidget {
           },
         ),
         RadioListTile<Currency>(
-          title: Text('Dollar CA (\$)'),
+          title: const Text('Dollar CA (\$)'),
           subtitle: const Text('Canada'),
           value: Currency.CAD,
           groupValue: currentCurrency,

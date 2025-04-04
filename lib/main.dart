@@ -1224,7 +1224,7 @@ class SubscriptionCard extends StatelessWidget {
               SizedBox(
                 width: 120,
                 child: Text(
-                  '${currency.formatAmount(subscription.amount)}',
+                  currency.formatAmount(subscription.amount),
                   style: textTheme.headlineMedium?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: colorScheme.primary,

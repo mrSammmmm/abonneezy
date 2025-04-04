@@ -160,7 +160,8 @@ class _AddSubscriptionScreenState extends State<AddSubscriptionScreen> {
                     prefixText: '\$ ',
                     border: OutlineInputBorder(),
                   ),
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  keyboardType:
+                      const TextInputType.numberWithOptions(decimal: true),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter an amount';
