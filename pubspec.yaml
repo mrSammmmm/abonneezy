@@ -1,0 +1,59 @@
+name: abonneezy
+description: "A new Flutter project."
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.2.2
+  fl_chart: ^0.68.0
+  rxdart: ^0.27.7
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  # Ajoute ici d'autres dépendances futures
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  # --- DÉCLARATION DES POLICES (Corrigée pour Inter) ---
+  # L'indentation est TRÈS importante
+  fonts:
+    - family: Poppins # La déclaration Poppins reste la même (si tu as bien ces fichiers)
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+
+    - family: Inter # <<<<<=== CORRECTION ICI ===>>>>>
+      fonts:
+        # Déclare le fichier de police variable principal
+        - asset: assets/fonts/Inter-VariableFont_opsz,wght.ttf
+          # Pour les polices variables, tu ne spécifies généralement pas
+          # les poids ici, Flutter les utilise dynamiquement.
+          # weight: 400 # Optionnel : on peut spécifier le poids par défaut
+
+        # Déclare le fichier italique variable et spécifie son style
+        - asset: assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf
+          style: italic
+
+  # --- DÉCLARATION DES ASSETS ---
+  # Assure-toi que cette section est bien là et décommentée
+  assets:
+    - assets/fonts/ # Déclare le dossier pour qu'il soit inclus
+    - assets/images/
